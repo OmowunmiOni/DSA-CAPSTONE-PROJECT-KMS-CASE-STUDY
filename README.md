@@ -51,6 +51,22 @@ To run these queries:
 2. Run queries sequentially in any SQL-compatible IDE
 3. Interpret results or export them for visualizations
 
+🎯 Business Impact: This analysis provides KMS management with:
+
+- Clear understanding of product category performance
+- Regional sales insights for resource allocation
+- Customer segmentation strategies
+- Shipping cost optimization opportunities
+- Revenue enhancement recommendations for underperforming segments
+- 
+📊 Next Steps
+- Implement recommended customer retention programs
+- Develop regional expansion strategies based on performance data
+- Create tiered shipping pricing structure
+- Monitor the impact of implemented changes on key metrics
+- Conduct similar analysis for subsequent years to track progress
+- This analysis was conducted as part of the DSA Data Analysis course project, demonstrating practical SQL skills for business intelligence applications.
+
 ---
 
 ## 📝 Author
