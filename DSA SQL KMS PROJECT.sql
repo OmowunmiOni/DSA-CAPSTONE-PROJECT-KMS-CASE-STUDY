@@ -133,7 +133,7 @@ ORDER BY
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
 
 
---QUESTION 8- Corporate Customer that placed the most number of orders in 2009 – 2012
+--QUESTION 8- Corporate Customer that placed the most number of orders in 2009 â€“ 2012
 SELECT 
     [Customer Name], 
     COUNT(DISTINCT [Order ID]) AS OrderCount
