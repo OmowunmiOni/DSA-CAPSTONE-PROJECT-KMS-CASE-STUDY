@@ -6,8 +6,8 @@ This project provides insights from the KMS retail dataset using SQL. It include
 
 ## 📁 File Overview
 
-- **`KMS_SQL_Analysis.sql`**  
-  A collection of SQL queries designed to extract meaningful insights from the dataset provided in the `'KMS Sql Case Study$'` table.
+- **`DSA KMS PROJECT.sql`**  
+  A collection of SQL queries designed to extract meaningful insights from the dataset provided in the `'KMS Sql Case Study'` table.
 
 ---
 
