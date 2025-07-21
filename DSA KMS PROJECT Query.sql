@@ -142,7 +142,7 @@ OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
 
 select * from [KMS Sql Case Study]
 
---QUESTION 8- Corporate Customer that placed the most number of orders in 2009 – 2012
+--QUESTION 8- Corporate Customer that placed the most number of orders in 2009 â€“ 2012
 SELECT 
     [Customer_Name], 
     COUNT(DISTINCT [Order_ID]) AS OrderCount
@@ -204,8 +204,9 @@ ORDER BY
 
 -- This approach would not only recover the high cost of Express Air but also generate additional revenue.
 
--- It aligns value with price: the faster the delivery, the higher the charge.
+-- It aligns value with price: the faster the delivery, the higherÂ theÂ charge.
 
+-- This strategy encourages customers to select priority levels intentionally, and helps the company optimize both delivery speed and profit.
 
 
 
