@@ -1,11 +1,11 @@
 --QUESTION 1- PRODUCT CATEGORY WITH HIGHEST SALES
 SELECT
-      [Product Category],
+      [Product_Category],
       SUM(Sales) AS TotalSales
 FROM
-   ['KMS Sql Case Study$']
+   [KMS Sql Case Study]
 GROUP BY
-    [Product Category]
+    [Product_Category]
 ORDER BY
        TotalSales DESC;
 -- FROM THE RESULT TECHNOLOGY HAS THE HIGHEST SALES
@@ -17,7 +17,7 @@ SELECT
    Region,
    SUM(Sales) AS TotalSales
 FROM
-   ['KMS Sql Case Study$']
+   [KMS Sql Case Study]
 GROUP BY 
     Region
 ORDER BY
@@ -29,7 +29,7 @@ SELECT
    Region,
    SUM(Sales) AS TotalSales
 FROM
-   ['KMS Sql Case Study$']
+   [KMS Sql Case Study]
 GROUP BY 
     Region
 ORDER BY
@@ -41,21 +41,21 @@ OFFSET 0 ROWS FETCH NEXT 3 ROWS ONLY;
 SELECT
      SUM(Sales) AS TotalSales
 FROM
-    ['KMS Sql Case Study$']
+    [KMS Sql Case Study]
 WHERE 
-    [Product Sub-Category]='Appliances'
+    [Product_Sub_Category]='Appliances'
     AND Province='Ontario';
 
 
 -- QUESTION 4- bottom 10 customers
 
 SELECT TOP 10
-   [Customer Name],
+   [Customer_Name],
    SUM(Sales) AS TotalSales
 FROM
-   ['KMS Sql Case Study$']
+   [KMS Sql Case Study]
 GROUP BY
-    [Customer Name]
+    [Customer_Name]
 ORDER BY
     TotalSales ASC;
 
@@ -71,12 +71,12 @@ ORDER BY
 
 --QUESTION 5- ship mode with most shipping cost
 SELECT
-    [Ship Mode],
-    SUM([Shipping Cost]) AS TotalShippingCost
+    [Ship_Mode],
+    SUM([Shipping_Cost]) AS TotalShippingCost
 FROM
-   ['KMS Sql Case Study$']
+   [KMS Sql Case Study]
 GROUP BY
-  [Ship Mode]
+  [Ship_Mode]
 ORDER BY
    TotalShippingCost DESC;
 
@@ -88,9 +88,9 @@ SELECT
     SUM(Profit) AS TotalProfit,
     SUM(Sales) AS TotalSales
 FROM 
-    ['KMS Sql Case Study$']
+    [KMS Sql Case Study]
 GROUP BY 
-    [Customer Name]
+    [Customer_Name]
 ORDER BY 
     TotalProfit DESC
 OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;
@@ -98,36 +98,36 @@ OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;
 
 -- What products/services they purchase
 SELECT 
-    [Customer Name], 
-    [Product Category], 
-    [Product Sub-Category], 
+    [Customer_Name], 
+    [Product_Category], 
+    [Product_Sub_Category], 
     COUNT(*) AS PurchaseCount,
     SUM(Sales) AS TotalSales
 FROM 
-    ['KMS Sql Case Study$']
+    [KMS Sql Case Study]
 WHERE 
     [Customer Name] IN (
-        SELECT TOP 10 [Customer Name]
-        FROM ['KMS Sql Case Study$']
-        GROUP BY [Customer Name]
+        SELECT TOP 10 [Customer_Name]
+        FROM [KMS Sql Case Study]
+        GROUP BY [Customer_Name]
         ORDER BY SUM(Profit) DESC
     )
 GROUP BY 
-    [Customer Name], [Product Category], [Product Sub-Category]
+    [Customer_Name], [Product_Category], [Product_Sub_Category]
 ORDER BY 
-    [Customer Name], PurchaseCount DESC;
+    [Customer_Name], PurchaseCount DESC;
 
 
 --QUESTION 7- small business customer with the highest sales
 SELECT 
-    [Customer Name], 
+    [Customer_Name], 
     SUM(Sales) AS TotalSales
 FROM 
-    ['KMS Sql Case Study$']
+    [KMS Sql Case Study]
 WHERE 
-    [Customer Segment] = 'Small Business'
+    [Customer_Segment] = 'Small Business'
 GROUP BY 
-    [Customer Name]
+    [Customer_Name]
 ORDER BY 
     TotalSales DESC
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
@@ -135,15 +135,15 @@ OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
 
 --QUESTION 8- Corporate Customer that placed the most number of orders in 2009 – 2012
 SELECT 
-    [Customer Name], 
-    COUNT(DISTINCT [Order ID]) AS OrderCount
+    [Customer_Name], 
+    COUNT(DISTINCT [Order_ID]) AS OrderCount
 FROM 
-    ['KMS Sql Case Study$']
+    [KMS Sql Case Study]
 WHERE 
-    [Customer Segment] = 'Corporate'
-    AND YEAR([Order Date]) BETWEEN 2009 AND 2012
+    [Customer_Segment] = 'Corporate'
+    AND YEAR([Order_Date]) BETWEEN 2009 AND 2012
 GROUP BY 
-    [Customer Name]
+    [Customer_Name]
 ORDER BY 
     OrderCount DESC
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
@@ -151,14 +151,14 @@ OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
 
 --QUESTION 9- the most profitable consumer customer
 SELECT 
-    [Customer Name], 
+    [Customer_Name], 
     SUM(Profit) AS TotalProfit
 FROM 
-    ['KMS Sql Case Study$']
+    [KMS Sql Case Study]
 WHERE 
-    [Customer Segment] = 'Consumer'
+    [Customer_Segment] = 'Consumer'
 GROUP BY 
-    [Customer Name]
+    [Customer_Name]
 ORDER BY 
     TotalProfit DESC
 OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
@@ -166,17 +166,17 @@ OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
 
 --QUESTION 11- Average shipping cost and total sales per Order Priority and Ship Mode
 SELECT 
-    [Order Priority], 
-    [Ship Mode], 
+    [Order_Priority], 
+    [Ship_Mode], 
     COUNT(*) AS OrderCount,
-    AVG([Shipping Cost]) AS AvgShippingCost,
-    SUM([Shipping Cost]) AS TotalShippingCost
+    AVG([Shipping_Cost]) AS AvgShippingCost,
+    SUM([Shipping_Cost]) AS TotalShippingCost
 FROM 
-    ['KMS Sql Case Study$']
+    [KMS Sql Case Study]
 GROUP BY 
-    [Order Priority], [Ship Mode]
+    [Order_Priority], [Ship_Mode]
 ORDER BY 
-    [Order Priority], AvgShippingCost DESC;
+    [Order_Priority], AvgShippingCost DESC;
 
 -- Yes, the company spent shipping costs based on the Order Priority.
 -- For Critical and High priority orders, they used faster but costlier methods like Regular Air and Delivery Truck,
